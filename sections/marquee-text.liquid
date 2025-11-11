@@ -1,0 +1,167 @@
+{% comment %}
+  Marquee Text Section
+{% endcomment %}
+<section class="marquee-wrapper marquee-wrapper--{{ section.settings.speed }} marquee-wrapper--{{ section.settings.direction }}">
+  {%- liquid
+    assign aria_label = ''
+    for block in section.blocks
+      assign aria_label = aria_label | append: block.settings.text
+      unless forloop.last
+        assign aria_label = aria_label | append: ' '
+      endunless
+    endfor
+  -%}
+  <div class="marquee" aria-label="{{ aria_label | strip }}">
+    <div class="marquee__track">
+      {%- for block in section.blocks -%}
+        <span
+          class="marquee__item"
+          style="margin-inline-end: {{ block.settings.spacing_after }}px;"
+          {{ block.shopify_attributes }}
+        >
+          {{ block.settings.text }}
+        </span>
+      {%- endfor -%}
+      {%- comment -%} duplicate for seamless loop {%- endcomment -%}
+      {%- for block in section.blocks -%}
+        <span class="marquee__item" style="margin-inline-end: {{ block.settings.spacing_after }}px;" aria-hidden="true">
+          {{ block.settings.text }}
+        </span>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<style>
+  .marquee-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 20px 0;
+    background: {{ section.settings.background }};
+    color: {{ section.settings.text_color }};
+  }
+
+  .marquee {
+    position: relative;
+    display: flex;
+  }
+
+  .marquee__track {
+    display: inline-flex;
+    align-items: center;
+    animation: marquee-left 20s linear infinite;
+    gap: 100px;
+  }
+
+  /* direction control */
+  .marquee-wrapper--right .marquee__track {
+    animation-name: marquee-right;
+  }
+
+  /* speed control */
+  .marquee-wrapper--slow .marquee__track { animation-duration: 30s; }
+  .marquee-wrapper--medium .marquee__track { animation-duration: 20s; }
+  .marquee-wrapper--fast .marquee__track { animation-duration: 12s; }
+
+  .marquee__item {
+    font-size: 4rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+
+  /* pause on hover */
+  .marquee-wrapper:hover .marquee__track {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes marquee-right {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+
+  @media (max-width: 749px) {
+    .marquee__item {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Marquee text",
+  "settings": [
+    {
+      "type": "select",
+      "id": "direction",
+      "label": "Direction",
+      "options": [
+        { "value": "left", "label": "Left to right" },
+        { "value": "right", "label": "Right to left" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "speed",
+      "label": "Speed",
+      "options": [
+        { "value": "slow", "label": "Slow" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "fast", "label": "Fast" }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "New collection"
+        },
+        {
+          "type": "range",
+          "id": "spacing_after",
+          "min": 0,
+          "max": 120,
+          "step": 4,
+          "unit": "px",
+          "label": "Spacing after",
+          "default": 32
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee text",
+      "blocks": [
+        { "type": "item", "settings": { "text": "New collection", "spacing_after": 32 } },
+        { "type": "item", "settings": { "text": "Free shipping over £50", "spacing_after": 56 } },
+        { "type": "item", "settings": { "text": "Limited stock", "spacing_after": 32 } }
+      ]
+    }
+  ]
+}
+{% endschema %}
