@@ -1,0 +1,32 @@
+{%- comment -%}
+  Reusable section title/header snippet
+  Params:
+    - tagline: string (optional)
+    - heading: string (optional)
+    - subheading: richtext/string (optional)
+    - heading_tag: default 'h2'
+    - heading_class: class to apply to heading element (e.g., 'h2')
+    - base_class: wrapper base class (e.g., 'features__header')
+    - extra_classes: additional classes for wrapper (e.g., 'features__header--left')
+{%- endcomment -%}
+{%- liquid
+  assign wrapper_class = base_class | default: 'section-header'
+  if extra_classes != blank
+    assign wrapper_class = wrapper_class | append: ' ' | append: extra_classes
+  endif
+  assign h_tag = heading_tag | default: 'h2'
+  assign h_class = heading_class | default: 'h2'
+-%}
+<div class="{{ wrapper_class }}">
+  {% if tagline != blank %}
+    <p class="features__tagline">{{ tagline }}</p>
+  {% endif %}
+  {% if heading != blank %}
+    <{{ h_tag }} class="features__heading {{ h_class }}">{{ heading }}</{{ h_tag }}>
+  {% endif %}
+  {% if subheading != blank %}
+    <div class="features__subheading rte">{{ subheading }}</div>
+  {% endif %}
+</div>
+
+

@@ -6,18 +6,18 @@
   {% endif %}
   <div class="page-width features__content">
     {% if section.settings.layout != 'image' %}
-      {% if section.settings.heading != blank or section.settings.subheading != blank %}
-        <div class="features__header">
-          {% if section.settings.tagline != blank %}
-            <p class="features__tagline">{{ section.settings.tagline }}</p>
-          {% endif %}
-          {% if section.settings.heading != blank %}
-            <h2 class="features__heading h2">{{ section.settings.heading }}</h2>
-          {% endif %}
-          {% if section.settings.subheading != blank %}
-            <div class="features__subheading rte">{{ section.settings.subheading }}</div>
-          {% endif %}
-        </div>
+      {% if section.settings.heading != blank
+        or section.settings.subheading != blank
+        or section.settings.tagline != blank
+      %}
+        {% render 'section-title',
+          tagline: section.settings.tagline,
+          heading: section.settings.heading,
+          subheading: section.settings.subheading,
+          heading_tag: 'h2',
+          heading_class: 'h2',
+          base_class: 'features__header'
+        %}
       {% endif %}
     {% endif %}
 
@@ -55,17 +55,15 @@
             or section.settings.subheading != blank
             or section.settings.tagline != blank
           %}
-            <div class="features__header features__header--left">
-              {% if section.settings.tagline != blank %}
-                <p class="features__tagline">{{ section.settings.tagline }}</p>
-              {% endif %}
-              {% if section.settings.heading != blank %}
-                <h2 class="features__heading h2">{{ section.settings.heading }}</h2>
-              {% endif %}
-              {% if section.settings.subheading != blank %}
-                <div class="features__subheading rte">{{ section.settings.subheading }}</div>
-              {% endif %}
-            </div>
+            {% render 'section-title',
+              tagline: section.settings.tagline,
+              heading: section.settings.heading,
+              subheading: section.settings.subheading,
+              heading_tag: 'h2',
+              heading_class: 'h2',
+              base_class: 'features__header',
+              extra_classes: 'features__header--left'
+            %}
           {% endif %}
           <div class="features__grid features__grid--list">
             {%- for block in section.blocks -%}
