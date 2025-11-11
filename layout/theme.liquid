@@ -90,6 +90,7 @@
         --color-badge-foreground: {{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }};
         --color-badge-background: {{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }};
         --color-badge-border: {{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }};
+        --color-icon-box: {{ scheme.settings.feature_icon_box.red }},{{ scheme.settings.feature_icon_box.green }},{{ scheme.settings.feature_icon_box.blue }};
         --payment-terms-background-color: rgb({{ scheme.settings.background.rgb }});
       }
       {% endfor %}
@@ -220,6 +221,9 @@
         --variant-pills-shadow-horizontal-offset: {{ settings.variant_pills_shadow_horizontal_offset }}px;
         --variant-pills-shadow-vertical-offset: {{ settings.variant_pills_shadow_vertical_offset }}px;
         --variant-pills-shadow-blur-radius: {{ settings.variant_pills_shadow_blur }}px;
+
+        --section-padding-top: 96px;
+        --section-padding-bottom: 96px;
       }
 
       *,

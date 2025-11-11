@@ -3,7 +3,7 @@
     {% if section.settings.heading != blank or section.settings.subheading != blank %}
       <div class="features__header">
         {% if section.settings.tagline != blank %}
-          <p class="features__tagline caption-with-letter-spacing">{{ section.settings.tagline }}</p>
+          <p class="features__tagline">{{ section.settings.tagline }}</p>
         {% endif %}
         {% if section.settings.heading != blank %}
           <h2 class="features__heading h2">{{ section.settings.heading }}</h2>
@@ -50,7 +50,7 @@
                 <div class="features__item" {{ block.shopify_attributes }}>
                   <div
                     class="features__icon"
-                    style="--icon-size: {{ section.settings.icon_size }}px; {% if section.settings.icon_box_color != blank %}background-color: {{ section.settings.icon_box_color }};{% endif %}"
+                    style="--icon-size: {{ section.settings.icon_size }}px;{% if block.settings.icon_box_color != blank %} background-color: {{ block.settings.icon_box_color }};{% else %} background-color: rgb(var(--color-icon-box));{% endif %}"
                   >
                     {% if block.settings.icon != blank %}
                       <i data-lucide="{{ block.settings.icon | escape }}" aria-hidden="true"></i>
@@ -58,7 +58,7 @@
                   </div>
                   <div class="features__content">
                     {% if block.settings.title != blank %}
-                      <h3 class="features__title h4">{{ block.settings.title }}</h3>
+                      <h3 class="features__title text-base">{{ block.settings.title }}</h3>
                     {% endif %}
                     {% if block.settings.text != blank %}
                       <div class="features__text rte">{{ block.settings.text }}</div>
@@ -77,7 +77,7 @@
             <div class="features__item" {{ block.shopify_attributes }}>
               <div
                 class="features__icon"
-                style="--icon-size: {{ section.settings.icon_size }}px; {% if section.settings.icon_box_color != blank %}background-color: {{ section.settings.icon_box_color }};{% endif %}"
+                style="--icon-size: {{ section.settings.icon_size }}px;{% if block.settings.icon_box_color != blank %} background-color: {{ block.settings.icon_box_color }};{% else %} background-color: rgb(var(--color-icon-box));{% endif %}"
               >
                 {% if block.settings.icon != blank %}
                   <i data-lucide="{{ block.settings.icon | escape }}" aria-hidden="true"></i>
@@ -85,7 +85,7 @@
               </div>
               <div class="features__content">
                 {% if block.settings.title != blank %}
-                  <h3 class="features__title h4">{{ block.settings.title }}</h3>
+                  <h3 class="features__title text-base">{{ block.settings.title }}</h3>
                 {% endif %}
                 {% if block.settings.text != blank %}
                   <div class="features__text rte">{{ block.settings.text }}</div>
@@ -147,12 +147,12 @@
 <style>
   /* Features Section */
   .features {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: var(--section-padding-top);
+    padding-bottom: var(--section-padding-bottom);
   }
 
   .features__header {
-    max-width: 900px;
+    max-width: 580px;
     margin: 0 auto 32px auto;
     text-align: center;
   }
@@ -163,6 +163,8 @@
 
   .features__tagline {
     margin: 0 0 10px 0;
+    font-size: 16px;
+    font-weight: 600;
     color: rgb(var(--color-foreground), 0.7);
   }
 
@@ -172,7 +174,7 @@
 
   .features__grid {
     display: grid;
-    gap: 24px;
+    gap: 16px;
   }
 
   .features__grid--2 {
@@ -203,10 +205,11 @@
   }
 
   .features__item {
-    display: grid;
-    grid-template-columns: auto 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 16px;
-    align-items: start;
+    align-items: center;
+    text-align: center;
     padding: 20px;
     border-radius: var(--radius-base, 8px);
     background: rgb(var(--color-background));
@@ -217,7 +220,7 @@
     align-items: center;
     justify-content: center;
     padding: 10px;
-    border-radius: var(--radius-base, 8px);
+    border-radius: 9999px;
     color: rgb(var(--color-foreground));
   }
 
@@ -332,10 +335,8 @@
       "default": 28
     },
     {
-      "type": "color",
-      "id": "icon_box_color",
-      "label": "Icon box background color",
-      "default": "#F4F4F5"
+      "type": "paragraph",
+      "content": "Icon boxes use the color from your color scheme (Theme settings → Colors → Feature icon box). Override per feature block if needed."
     },
     {
       "type": "image_picker",
@@ -369,6 +370,11 @@
           "id": "icon",
           "label": "Lucide icon name",
           "info": "Enter a Lucide icon name, e.g. shield, dumbbell, clock"
+        },
+        {
+          "type": "color",
+          "id": "icon_box_color",
+          "label": "Icon box color (override)"
         },
         {
           "type": "text",

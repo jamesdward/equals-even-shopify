@@ -81,6 +81,12 @@
             "id": "shadow",
             "label": "t:settings_schema.colors.settings.shadow.label",
             "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "feature_icon_box",
+            "label": "Feature icon box",
+            "default": "#F4F4F5"
           }
         ],
         "role": {
