@@ -1,17 +1,24 @@
 <section id="Features-{{ section.id }}" class="section features color-{{ section.settings.color_scheme }} gradient">
-  <div class="page-width">
-    {% if section.settings.heading != blank or section.settings.subheading != blank %}
-      <div class="features__header">
-        {% if section.settings.tagline != blank %}
-          <p class="features__tagline">{{ section.settings.tagline }}</p>
-        {% endif %}
-        {% if section.settings.heading != blank %}
-          <h2 class="features__heading h2">{{ section.settings.heading }}</h2>
-        {% endif %}
-        {% if section.settings.subheading != blank %}
-          <div class="features__subheading rte">{{ section.settings.subheading }}</div>
-        {% endif %}
-      </div>
+  {% if section.settings.show_pattern %}
+    <div class="features__pattern features__pattern--top" aria-hidden="true">
+      <div class="features__pattern-content"></div>
+    </div>
+  {% endif %}
+  <div class="page-width features__content">
+    {% if section.settings.layout != 'image' %}
+      {% if section.settings.heading != blank or section.settings.subheading != blank %}
+        <div class="features__header">
+          {% if section.settings.tagline != blank %}
+            <p class="features__tagline">{{ section.settings.tagline }}</p>
+          {% endif %}
+          {% if section.settings.heading != blank %}
+            <h2 class="features__heading h2">{{ section.settings.heading }}</h2>
+          {% endif %}
+          {% if section.settings.subheading != blank %}
+            <div class="features__subheading rte">{{ section.settings.subheading }}</div>
+          {% endif %}
+        </div>
+      {% endif %}
     {% endif %}
 
     {%- liquid
@@ -44,6 +51,22 @@
           </div>
         {% endif %}
         <div class="features__list">
+          {% if section.settings.heading != blank
+            or section.settings.subheading != blank
+            or section.settings.tagline != blank
+          %}
+            <div class="features__header features__header--left">
+              {% if section.settings.tagline != blank %}
+                <p class="features__tagline">{{ section.settings.tagline }}</p>
+              {% endif %}
+              {% if section.settings.heading != blank %}
+                <h2 class="features__heading h2">{{ section.settings.heading }}</h2>
+              {% endif %}
+              {% if section.settings.subheading != blank %}
+                <div class="features__subheading rte">{{ section.settings.subheading }}</div>
+              {% endif %}
+            </div>
+          {% endif %}
           <div class="features__grid features__grid--list">
             {%- for block in section.blocks -%}
               {%- if block.type == 'feature' -%}
@@ -97,6 +120,11 @@
       </div>
     {% endif %}
   </div>
+  {% if section.settings.show_pattern %}
+    <div class="features__pattern features__pattern--bottom" aria-hidden="true">
+      <div class="features__pattern-content"></div>
+    </div>
+  {% endif %}
 
   <script>
     (function () {
@@ -149,12 +177,23 @@
   .features {
     padding-top: var(--section-padding-top);
     padding-bottom: var(--section-padding-bottom);
+    position: relative;
+    overflow: hidden;
   }
 
+  .features__content {
+    position: relative;
+    z-index: 2;
+  }
   .features__header {
     max-width: 580px;
     margin: 0 auto 32px auto;
     text-align: center;
+  }
+  .features__header--left {
+    max-width: 580px;
+    margin: 0 0 32px 0;
+    text-align: left;
   }
 
   .features__heading {
@@ -210,7 +249,6 @@
     gap: 16px;
     align-items: center;
     text-align: center;
-    padding: 20px;
     border-radius: var(--radius-base, 8px);
     background: rgb(var(--color-background));
   }
@@ -258,13 +296,46 @@
   .features__media .features__image {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     border-radius: var(--radius-base, 12px);
   }
 
   .features__grid--list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
+  }
+  .features__media {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+  }
+  /* In image layout, align feature items left */
+  .features__split .features__item {
+    align-items: flex-start;
+    text-align: left;
+  }
+  /* Pattern */
+  .features__pattern {
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-size: contain;
+    z-index: 1;
+    background-repeat: no-repeat;
+    mix-blend-mode: plus-lighter;
+  }
+  .features__pattern--top {
+    top: 0;
+    background-image: url('/assets/circles-pattern.webp');
+    background-position: top center;
+  }
+  .features__pattern--bottom {
+    bottom: 0;
+    background-image: url('/assets/circles-pattern-rotate.webp');
+    background-position: bottom center;
   }
 
   @media (max-width: 989px) {
@@ -274,6 +345,9 @@
     .features__split .features__media,
     .features__split .features__list {
       order: initial !important;
+    }
+    .features__grid--list {
+      grid-template-columns: 1fr;
     }
   }
 </style>
@@ -292,6 +366,12 @@
       "id": "tagline",
       "label": "Tagline (eyebrow)",
       "default": "Our promise"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_pattern",
+      "label": "Show background dot pattern",
+      "default": false
     },
     {
       "type": "text",
