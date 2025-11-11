@@ -1,0 +1,125 @@
+/* Features Section */
+.features {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.features__header {
+  max-width: 900px;
+  margin: 0 auto 32px auto;
+  text-align: center;
+}
+
+.features__heading {
+  margin: 0 0 12px 0;
+}
+
+.features__subheading {
+  color: rgb(var(--color-foreground), 0.8);
+}
+
+.features__grid {
+  display: grid;
+  gap: 24px;
+}
+
+.features__grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.features__grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.features__grid--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 989px) {
+  .features__grid--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .features__grid--3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 749px) {
+  .features__grid--4,
+  .features__grid--3,
+  .features__grid--2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.features__item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 20px;
+  border-radius: var(--radius-base, 8px);
+  background: rgb(var(--color-background));
+}
+
+.features__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--icon-size, 28px);
+  height: var(--icon-size, 28px);
+  color: rgb(var(--color-foreground));
+}
+
+.features__icon-svg {
+  width: var(--icon-size, 28px);
+  height: var(--icon-size, 28px);
+  stroke: currentColor;
+  stroke-width: 1.75px;
+}
+
+.features__title {
+  margin: 0 0 6px 0;
+}
+
+.features__text {
+  margin: 0;
+  color: rgb(var(--color-foreground), 0.8);
+}
+
+/* Split layout */
+.features__split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.features__split.features__split--right .features__media {
+  order: 2;
+}
+.features__split.features__split--right .features__list {
+  order: 1;
+}
+
+.features__media .features__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-base, 12px);
+}
+
+.features__grid--list {
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 989px) {
+  .features__split {
+    grid-template-columns: 1fr;
+  }
+  .features__split .features__media,
+  .features__split .features__list {
+    order: initial !important;
+  }
+}
+
+
