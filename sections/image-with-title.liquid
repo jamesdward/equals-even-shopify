@@ -7,15 +7,32 @@
     position: relative;
   }
 
-  .image-with-title__bg {
+  .image-with-title__pattern {
     position: absolute;
-    inset: 0;
     z-index: 0;
-    background-repeat: repeat;
-    background-position: center;
-    background-size: auto;
-    opacity: 1;
     pointer-events: none;
+    opacity: 1;
+  }
+
+  .image-with-title__pattern svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .image-with-title__pattern--top-right {
+    top: -200px;
+    right: -200px;
+      width: 600px;
+    height: 600px;
+  }
+
+  .image-with-title__pattern--bottom-left {
+    bottom: -200px;
+    left: -200px;
+    width: 600px;
+    height: 600px;
+    transform: scaleX(-1);
   }
 
   @media screen and (min-width: 750px) {
@@ -37,17 +54,25 @@
 -%}
 
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
-  {%- if section.settings.background_image != blank -%}
-    <div
-      class="image-with-title__bg"
-      aria-hidden="true"
-      style="background-image: url({{ section.settings.background_image | image_url: width: 2000 }});"
-    ></div>
+  {%- if section.settings.show_pattern -%}
+    <div class="image-with-title__pattern image-with-title__pattern--top-right" aria-hidden="true">
+      <svg width="653" height="653" viewBox="0 0 653 653" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="326.5" cy="326.5" r="319.5" stroke="#ABFF88" stroke-width="14"/>
+      </svg>
+    </div>
+    <div class="image-with-title__pattern image-with-title__pattern--bottom-left" aria-hidden="true">
+      <svg width="653" height="653" viewBox="0 0 653 653" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="326.5" cy="326.5" r="319.5" stroke="#ABFF88" stroke-width="14"/>
+      </svg>
+    </div>
   {%- endif -%}
   <div class="page-width">
     <div class="image-with-text image-with-text--{{ section.settings.content_layout }} isolate{% if settings.text_boxes_border_thickness > 0 and settings.text_boxes_border_opacity > 0 and settings.media_border_thickness > 0 and settings.media_border_opacity > 0 %} collapse-borders{% endif %}{% unless section.settings.color_scheme == section.settings.section_color_scheme and settings.media_border_thickness > 0 and settings.text_boxes_shadow_opacity == 0 and settings.text_boxes_border_thickness == 0 or settings.text_boxes_border_opacity == 0 %} collapse-corners{% endunless %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <div class="image-with-text__grid grid grid--gapless grid--1-col grid--{% if section.settings.desktop_image_width == 'medium' %}2-col-tablet{% else %}3-col-tablet{% endif %}{% if section.settings.layout == 'text_first' %} image-with-text__grid--reverse{% endif %}">
-        <div class="image-with-text__media-item image-with-text__media-item--{{ section.settings.desktop_image_width }} image-with-text__media-item--{{ section.settings.desktop_content_position }} grid__item" style="z-index: 1;">
+        <div
+          class="image-with-text__media-item image-with-text__media-item--{{ section.settings.desktop_image_width }} image-with-text__media-item--{{ section.settings.desktop_content_position }} grid__item"
+          style="z-index: 1;"
+        >
           <div
             class="image-with-text__media image-with-text__media--{{ section.settings.height }} global-media-settings{% unless remove_color_classes %} gradient color-{{ section.settings.color_scheme }}{% else %} background-transparent{% endunless %}{% if section.settings.image != blank %} media{% else %} image-with-text__media--placeholder placeholder{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}"
             {% if section.settings.height == 'adapt' and section.settings.image != blank %}
@@ -92,11 +117,7 @@
                 heading: section.settings.heading,
                 subheading: section.settings.subheading,
                 heading_tag: 'h2',
-                heading_class: 'image-with-text__heading h2',
-                subheading_class: 'image-with-text__text rte',
-                tagline_class: 'image-with-text__text image-with-text__text--caption caption-with-letter-spacing',
-                title_size: section.settings.title_size,
-                base_class: 'section-header'
+                title_size: section.settings.title_size
               %}
             {% endif %}
 
@@ -138,9 +159,10 @@
   },
   "settings": [
     {
-      "type": "image_picker",
-      "id": "background_image",
-      "label": "Background image"
+      "type": "checkbox",
+      "id": "show_pattern",
+      "default": false,
+      "label": "Show pattern"
     },
     {
       "type": "image_picker",
@@ -363,13 +385,8 @@
   "presets": [
     {
       "name": "Image with title",
-      "blocks": [
-        { "type": "text" },
-        { "type": "button" }
-      ]
+      "blocks": [{ "type": "text" }, { "type": "button" }]
     }
   ]
 }
 {% endschema %}
-
-

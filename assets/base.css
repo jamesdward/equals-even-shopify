@@ -2314,6 +2314,10 @@ input[type='checkbox'] {
   z-index: 3;
 }
 
+.section-header__tagline {
+  color: rgb(var(--color-foreground), 0.7);
+}
+
 .shopify-section-header-sticky {
   position: sticky;
   top: 0;

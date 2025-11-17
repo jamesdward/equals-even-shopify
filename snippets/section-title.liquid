@@ -25,7 +25,7 @@
   if size_class != blank
     assign h_class_final = h_class_final | append: ' ' | append: size_class
   endif
-  assign t_class = tagline_class | default: 'caption-with-letter-spacing'
+  assign t_class = tagline_class | default: 'section-header__tagline h4'
   assign s_class = subheading_class | default: 'rte'
 -%}
 {% if style_preset == 'features' %}
