@@ -7,6 +7,10 @@
   background: none;
 }
 
+.featured-bundle {
+  min-height: 600px;
+}
+
 .featured-product-section {
   position: relative;
   overflow: hidden;
