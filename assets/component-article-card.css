@@ -13,6 +13,12 @@
   padding: 0;
 }
 
+.article-card {
+  border: 1px solid #000;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+}
 .grid--peek .article-card {
   box-sizing: border-box;
 }
