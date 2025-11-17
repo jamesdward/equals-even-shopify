@@ -6,6 +6,7 @@
     - subheading: richtext/string (optional)
     - heading_tag: default 'h2'
     - heading_class: class to apply to heading element (e.g., 'h2')
+    - title_size: optional class to control size (e.g., 'h1', 'h2', 'hxl')
     - subheading_class: class to apply to subheading wrapper
     - tagline_class: class to apply to tagline
     - base_class: wrapper base class (e.g., 'features__header')
@@ -19,6 +20,11 @@
   endif
   assign h_tag = heading_tag | default: 'h2'
   assign h_class = heading_class | default: 'h2'
+  assign size_class = title_size | default: ''
+  assign h_class_final = h_class
+  if size_class != blank
+    assign h_class_final = h_class_final | append: ' ' | append: size_class
+  endif
   assign t_class = tagline_class | default: 'caption-with-letter-spacing'
   assign s_class = subheading_class | default: 'rte'
 -%}
@@ -44,11 +50,9 @@
     <p class="{{ t_class }}">{{ tagline }}</p>
   {% endif %}
   {% if heading != blank %}
-    <{{ h_tag }} class="{{ h_class }}">{{ heading }}</{{ h_tag }}>
+    <{{ h_tag }} class="{{ h_class_final }}">{{ heading }}</{{ h_tag }}>
   {% endif %}
   {% if subheading != blank %}
     <div class="{{ s_class }}">{{ subheading }}</div>
   {% endif %}
 </div>
-
-
