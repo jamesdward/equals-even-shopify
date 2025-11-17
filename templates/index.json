@@ -1,97 +1,304 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "video_banner_PXaYte": {
+      "type": "video-banner",
+      "name": "Video banner",
+      "settings": {
+        "heading": "Calm skin = Calm mind",
+        "text": "<p>Premium skincare, created by twin doctors, designed for teen skin.</p>",
+        "button_link": "shopify://collections/all",
+        "button_label": "Shop now",
+        "content_position": "left",
+        "shopify_video": "shopify://files/videos/Comp 1_6.mp4",
+        "video_url": "",
+        "poster_image": "shopify://shop_images/image_85.webp"
+      }
+    },
+    "marquee_text_cJM8hh": {
+      "type": "marquee-text",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "item_6NVe9h": {
+          "type": "item",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
+            "text": "Doctor Formulated",
+            "spacing_after": 32
           }
         },
-        "text": {
-          "type": "text",
+        "item_86BT8C": {
+          "type": "item",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
+            "text": "Dermatologically Tested",
+            "spacing_after": 32
           }
         },
-        "button": {
-          "type": "buttons",
+        "item_aygGRN": {
+          "type": "item",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "text": "Vegan & Cruelty Free",
+            "spacing_after": 56
+          }
+        },
+        "item_nmPyxG": {
+          "type": "item",
+          "settings": {
+            "text": "Made in Britain",
+            "spacing_after": 32
           }
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
+        "item_6NVe9h",
+        "item_86BT8C",
+        "item_aygGRN",
+        "item_nmPyxG"
       ],
+      "name": "Marquee text",
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "direction": "left",
+        "speed": "medium",
+        "background": "#fffb5c",
+        "text_color": "#000000"
       }
     },
-    "rich_text": {
-      "type": "rich-text",
+    "features_section_RA3q8i": {
+      "type": "features-section",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "feature_JPQkmP": {
+          "type": "feature",
           "settings": {
-            "heading": "Talk about your brand",
+            "icon": "File-Badge",
+            "icon_box_color": "#a9ffff",
+            "title": "Real medical expertise",
+            "text": "<p>We understand skin biology and how hormones affect young skin.</p>"
+          }
+        },
+        "feature_RMWwea": {
+          "type": "feature",
+          "settings": {
+            "icon": "stethoscope",
+            "icon_box_color": "#a9ffff",
+            "title": "Clinical experience",
+            "text": "<p>We've seen thousands of patients and know what actually works.</p>"
+          }
+        },
+        "feature_yAE7WC": {
+          "type": "feature",
+          "settings": {
+            "icon": "Microscope",
+            "icon_box_color": "#a9ffff",
+            "title": "Evidence-based formulations",
+            "text": "<p>Every ingredient is chosen for its proven effectiveness and gentleness.</p>"
+          }
+        },
+        "feature_8BCrDT": {
+          "type": "feature",
+          "settings": {
+            "icon": "book-plus",
+            "icon_box_color": "#a9ffff",
+            "title": "Ongoing research",
+            "text": "<p>Current with the latest dermatological research and ingredient science.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_JPQkmP",
+        "feature_RMWwea",
+        "feature_yAE7WC",
+        "feature_8BCrDT"
+      ],
+      "name": "Features Section",
+      "settings": {
+        "tagline": "The Medical Difference",
+        "show_pattern": false,
+        "heading": "Doctors first, skincare founders second.",
+        "subheading": "<p>Teen skin needs different care than adult skin.  Your skin is still developing, producing more oil, and dealing with hormonal changes. Our formulations respect this - powerful enough to tackle concerns, gentle enough for daily use.</p>",
+        "layout": "grid",
+        "columns": 4,
+        "icon_size": 28,
+        "image_position": "left",
+        "color_scheme": ""
+      }
+    },
+    "featured_product_Fdzexw": {
+      "type": "featured-product",
+      "blocks": {
+        "text_HcPAwr": {
+          "type": "text",
+          "settings": {
+            "text": "Your first step to calm skin",
+            "text_style": "subtitle"
+          }
+        },
+        "title_BUABC3": {
+          "type": "title",
+          "settings": {
             "heading_size": "h1"
           }
         },
-        "text": {
-          "type": "text",
+        "price_ihiKPh": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_69TBWD": {
+          "type": "variant_picker",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_RXiP6G": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "buy_buttons_WtWyY6": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "share_kwpTyg": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text"
+        "text_HcPAwr",
+        "title_BUABC3",
+        "price_ihiKPh",
+        "variant_picker_69TBWD",
+        "quantity_selector_RXiP6G",
+        "buy_buttons_WtWyY6",
+        "share_kwpTyg"
       ],
+      "name": "t:sections.featured-product.presets.name",
       "settings": {
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "product": "spot-control-face-wash",
+        "color_scheme": "scheme-5",
+        "secondary_background": false,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "right",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_product_XA8e6D": {
+      "type": "featured-product",
+      "blocks": {
+        "text_UTgFVp": {
+          "type": "text",
+          "settings": {
+            "text": "Your first step to calm skin",
+            "text_style": "subtitle"
+          }
+        },
+        "title_Nx7pXH": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_xNfxFQ": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_Mq6RAF": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_kdNqQB": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "buy_buttons_QcVqBz": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "share_CfG6Qx": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_UTgFVp",
+        "title_Nx7pXH",
+        "price_xNfxFQ",
+        "variant_picker_Mq6RAF",
+        "quantity_selector_kdNqQB",
+        "buy_buttons_QcVqBz",
+        "share_CfG6Qx"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "spot-control-face-wash",
+        "color_scheme": "scheme-5",
+        "secondary_background": false,
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "right",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
         "collection": "all",
         "products_to_show": 8,
+        "title_tagline": "Shop the range",
+        "title": "Skin care, made equal",
+        "heading_size": "h0",
+        "description": "<p>A streamlined range that works together to calm breakouts, protect your skin, and boost confidence.</p>",
+        "show_description": false,
+        "description_style": "body",
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
+        "enable_desktop_slider": false,
+        "full_width": true,
         "show_view_all": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "round",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
+        "quick_add": "standard",
         "columns_mobile": "2",
-        "padding_top": 28,
-        "padding_bottom": 36
+        "swipe_on_mobile": false,
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "collage": {
@@ -127,6 +334,7 @@
         "heading_size": "h2",
         "desktop_layout": "left",
         "mobile_layout": "collage",
+        "card_styles": "product-card-wrapper",
         "color_scheme": "scheme-1",
         "padding_top": 36,
         "padding_bottom": 36
@@ -136,8 +344,9 @@
       "type": "video",
       "settings": {
         "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "heading_size": "h1",
+        "enable_video_looping": false,
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "description": "",
         "full_width": false,
         "color_scheme": "scheme-1",
@@ -152,7 +361,7 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
             "link": ""
           }
@@ -161,7 +370,7 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
             "link": ""
           }
@@ -170,7 +379,7 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
             "link": ""
           }
@@ -186,23 +395,26 @@
         "heading_size": "h1",
         "image_width": "third",
         "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
         "columns_desktop": 3,
         "column_alignment": "center",
         "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
         "color_scheme": "scheme-1",
         "columns_mobile": "1",
+        "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
+    "video_banner_PXaYte",
+    "marquee_text_cJM8hh",
+    "features_section_RA3q8i",
+    "featured_product_Fdzexw",
     "featured_collection",
+    "featured_product_XA8e6D",
     "collage",
     "video",
     "multicolumn"
