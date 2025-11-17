@@ -6,8 +6,11 @@
     - subheading: richtext/string (optional)
     - heading_tag: default 'h2'
     - heading_class: class to apply to heading element (e.g., 'h2')
+    - subheading_class: class to apply to subheading wrapper
+    - tagline_class: class to apply to tagline
     - base_class: wrapper base class (e.g., 'features__header')
     - extra_classes: additional classes for wrapper (e.g., 'features__header--left')
+    - style_preset: optional. When 'features', outputs minimal styles matching Features section
 {%- endcomment -%}
 {%- liquid
   assign wrapper_class = base_class | default: 'section-header'
@@ -16,16 +19,35 @@
   endif
   assign h_tag = heading_tag | default: 'h2'
   assign h_class = heading_class | default: 'h2'
+  assign t_class = tagline_class | default: 'caption-with-letter-spacing'
+  assign s_class = subheading_class | default: 'rte'
 -%}
+{% if style_preset == 'features' %}
+  <style>
+    .{{ wrapper_class }} {
+      max-width: 580px;
+      margin: 0 auto 32px auto;
+      text-align: center;
+    }
+    .{{ wrapper_class }} .features__heading { margin: 0 0 12px 0; }
+    .{{ wrapper_class }} .features__tagline {
+      margin: 0 0 10px 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: rgb(var(--color-foreground), 0.7);
+    }
+    .{{ wrapper_class }} .features__subheading { color: rgb(var(--color-foreground), 0.8); }
+  </style>
+{% endif %}
 <div class="{{ wrapper_class }}">
   {% if tagline != blank %}
-    <p class="features__tagline">{{ tagline }}</p>
+    <p class="{{ t_class }}">{{ tagline }}</p>
   {% endif %}
   {% if heading != blank %}
-    <{{ h_tag }} class="features__heading {{ h_class }}">{{ heading }}</{{ h_tag }}>
+    <{{ h_tag }} class="{{ h_class }}">{{ heading }}</{{ h_tag }}>
   {% endif %}
   {% if subheading != blank %}
-    <div class="features__subheading rte">{{ subheading }}</div>
+    <div class="{{ s_class }}">{{ subheading }}</div>
   {% endif %}
 </div>
 
