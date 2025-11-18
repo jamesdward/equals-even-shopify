@@ -16,6 +16,10 @@
   }
 }
 
+.multicolumn__title {
+  max-width: 640px;
+}
+
 @media screen and (min-width: 750px) and (max-width: 989px) {
   .multicolumn__title {
     padding-left: 5rem;
