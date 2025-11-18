@@ -17,9 +17,9 @@
     row-gap: var(--spacing-6, 24px);
   }
   .testimonials__quote {
-    font-size: var(--font-size-body, 1rem);
+    font-size: 2rem;
     line-height: 1.6;
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 3rem 0;
   }
   .testimonials__card {
     border-radius: var(--radius-3, 16px);
@@ -49,7 +49,10 @@
 
 <div class="testimonials color-{{ section.settings.color_scheme }} gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
   <div class="page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    {%- unless section.settings.title == blank and section.settings.tagline == blank and section.settings.subheading == blank -%}
+    {%- unless section.settings.title == blank
+      and section.settings.tagline == blank
+      and section.settings.subheading == blank
+    -%}
       <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin">
         {% render 'section-title',
           tagline: section.settings.tagline,
@@ -82,7 +85,8 @@
                     widths: '56, 72, 96, 112',
                     sizes: '56px',
                     class: 'testimonials__avatar',
-                    alt: block.settings.author_name | escape
+                    alt: block.settings.author_name
+                  | escape
                 }}
               {%- endif -%}
               <div class="testimonials__meta">
@@ -213,13 +217,8 @@
   "presets": [
     {
       "name": "Testimonials",
-      "blocks": [
-        { "type": "testimonial" },
-        { "type": "testimonial" }
-      ]
+      "blocks": [{ "type": "testimonial" }, { "type": "testimonial" }]
     }
   ]
 }
 {% endschema %}
-
-
