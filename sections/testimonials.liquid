@@ -1,0 +1,225 @@
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .testimonials__grid {
+    row-gap: var(--spacing-6, 24px);
+  }
+  .testimonials__quote {
+    font-size: var(--font-size-body, 1rem);
+    line-height: 1.6;
+    margin: 0 0 1.5rem 0;
+  }
+  .testimonials__card {
+    border-radius: var(--radius-3, 16px);
+  }
+  .testimonials__author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .testimonials__avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .testimonials__meta {
+    display: grid;
+    gap: 2px;
+  }
+  .testimonials__name {
+    font-weight: 700;
+  }
+  .testimonials__role {
+    opacity: 0.8;
+  }
+{%- endstyle -%}
+
+<div class="testimonials color-{{ section.settings.color_scheme }} gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
+  <div class="page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    {%- unless section.settings.title == blank and section.settings.tagline == blank and section.settings.subheading == blank -%}
+      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin">
+        {% render 'section-title',
+          tagline: section.settings.tagline,
+          heading: section.settings.title,
+          subheading: section.settings.subheading,
+          heading_tag: 'h2',
+          heading_class: 'title inline-richtext',
+          title_size: section.settings.heading_size,
+          base_class: 'testimonials__title'
+        %}
+      </div>
+    {%- endunless -%}
+
+    <ul class="testimonials__grid grid grid--1-col-tablet-down grid--2-col-desktop" role="list">
+      {%- for block in section.blocks -%}
+        <li class="grid__item" {{ block.shopify_attributes }}>
+          <div class="testimonials__card content-container">
+            {%- if block.settings.quote != blank -%}
+              <blockquote class="testimonials__quote rte">
+                {{ block.settings.quote }}
+              </blockquote>
+            {%- endif -%}
+
+            <div class="testimonials__author">
+              {%- if block.settings.author_image != blank -%}
+                {{
+                  block.settings.author_image
+                  | image_url: width: 112
+                  | image_tag:
+                    widths: '56, 72, 96, 112',
+                    sizes: '56px',
+                    class: 'testimonials__avatar',
+                    alt: block.settings.author_name | escape
+                }}
+              {%- endif -%}
+              <div class="testimonials__meta">
+                {%- if block.settings.author_name != blank -%}
+                  <div class="testimonials__name">{{ block.settings.author_name }}</div>
+                {%- endif -%}
+                {%- if block.settings.author_role != blank -%}
+                  <div class="testimonials__role">{{ block.settings.author_role }}</div>
+                {%- endif -%}
+              </div>
+            </div>
+          </div>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "class": "section",
+  "tag": "section",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "From the founders",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h2", "label": "H2" },
+        { "value": "h1", "label": "H1" },
+        { "value": "h0", "label": "H0" },
+        { "value": "hxl", "label": "HXL" },
+        { "value": "hxxl", "label": "HXXL" }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "select",
+      "id": "background_style",
+      "options": [
+        { "value": "none", "label": "No background" },
+        { "value": "primary", "label": "Primary background" }
+      ],
+      "default": "primary",
+      "label": "Background style"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "quote",
+          "label": "Quote",
+          "default": "<p>“Your testimonial text goes here.”</p>"
+        },
+        {
+          "type": "text",
+          "id": "author_name",
+          "label": "Author name",
+          "default": "Jane Doe"
+        },
+        {
+          "type": "text",
+          "id": "author_role",
+          "label": "Author role",
+          "default": "Founder"
+        },
+        {
+          "type": "image_picker",
+          "id": "author_image",
+          "label": "Author image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "blocks": [
+        { "type": "testimonial" },
+        { "type": "testimonial" }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+

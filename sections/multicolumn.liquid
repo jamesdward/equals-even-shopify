@@ -32,9 +32,15 @@
   >
     {%- unless section.settings.title == blank -%}
       <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin multicolumn__title">
-        <h2 class="title inline-richtext {{ section.settings.heading_size }}">
-          {{ section.settings.title }}
-        </h2>
+        {% render 'section-title',
+          tagline: section.settings.tagline,
+          heading: section.settings.title,
+          subheading: section.settings.subheading,
+          heading_tag: 'h2',
+          heading_class: 'title inline-richtext',
+          title_size: section.settings.heading_size,
+          base_class: 'multicolumn__title-header'
+        %}
         {%- if section.settings.button_label != blank and show_mobile_slider -%}
           <a href="{{ section.settings.button_link }}" class="link underlined-link large-up-hide">
             {{- section.settings.button_label | escape -}}
@@ -118,10 +124,20 @@
                   </div>
                 </div>
               {%- endif -%}
-              <div class="multicolumn-card__info">
-                {%- if block.settings.title != blank -%}
-                  <h3 class="inline-richtext">{{ block.settings.title }}</h3>
-                {%- endif -%}
+              <div
+                class="multicolumn-card__info"
+                {% if block.settings.card_background != blank %}
+                  style="background-color: {{ block.settings.card_background }};"
+                {% endif %}
+              >
+                {% render 'section-title',
+                  tagline: block.settings.tagline,
+                  heading: block.settings.title,
+                  heading_tag: 'h3',
+                  heading_class: 'inline-richtext',
+                  title_size: block.settings.heading_size,
+                  base_class: 'multicolumn-card__header'
+                %}
                 {%- if block.settings.text != blank -%}
                   <div class="rte">{{ block.settings.text }}</div>
                 {%- endif -%}
@@ -206,6 +222,16 @@
       "label": "t:sections.multicolumn.settings.title.label"
     },
     {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
       "type": "select",
       "id": "heading_size",
       "options": [
@@ -236,7 +262,7 @@
     {
       "type": "header",
       "content": "t:sections.multicolumn.settings.header_image.content"
-    },    
+    },
     {
       "type": "select",
       "id": "image_width",
@@ -284,23 +310,23 @@
     {
       "type": "header",
       "content": "t:sections.multicolumn.settings.header_button.content"
-    },    
+    },
     {
       "type": "text",
       "id": "button_label",
       "default": "t:sections.multicolumn.settings.button_label.default",
-      "label": "t:sections.multicolumn.settings.button_label.label", 
+      "label": "t:sections.multicolumn.settings.button_label.label",
       "info": "t:sections.multicolumn.settings.button_label.info"
     },
     {
       "type": "url",
       "id": "button_link",
       "label": "t:sections.multicolumn.settings.button_link.label"
-    },    
+    },
     {
       "type": "header",
       "content": "t:sections.multicolumn.settings.header_layout.content"
-    },     
+    },
     {
       "type": "range",
       "id": "columns_desktop",
@@ -347,7 +373,7 @@
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "scheme-1"
-    },    
+    },
     {
       "type": "header",
       "content": "t:sections.multicolumn.settings.header_mobile.content"
@@ -405,6 +431,26 @@
       "name": "t:sections.multicolumn.blocks.column.name",
       "settings": [
         {
+          "type": "text",
+          "id": "tagline",
+          "label": "Tagline"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "label": "Heading size",
+          "options": [
+            { "value": "h4", "label": "H4" },
+            { "value": "h3", "label": "H3" },
+            { "value": "h2", "label": "H2" },
+            { "value": "h1", "label": "H1" },
+            { "value": "h0", "label": "H0" },
+            { "value": "hxl", "label": "HXL" },
+            { "value": "hxxl", "label": "HXXL" }
+          ],
+          "default": "h3"
+        },
+        {
           "type": "image_picker",
           "id": "image",
           "label": "t:sections.multicolumn.blocks.column.settings.image.label"
@@ -431,6 +477,11 @@
           "type": "url",
           "id": "link",
           "label": "t:sections.multicolumn.blocks.column.settings.link.label"
+        },
+        {
+          "type": "color",
+          "id": "card_background",
+          "label": "Card background color"
         }
       ]
     }

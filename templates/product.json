@@ -117,8 +117,8 @@
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "",
-        "media_size": "large",
-        "constrain_to_viewport": true,
+        "media_size": "medium",
+        "constrain_to_viewport": false,
         "media_fit": "contain",
         "gallery_layout": "thumbnail_slider",
         "mobile_thumbnails": "hide",
@@ -130,84 +130,334 @@
         "padding_bottom": 12
       }
     },
-    "image-with-text": {
-      "type": "image-with-text",
+    "features_section_knWMbW": {
+      "type": "features-section",
       "blocks": {
-        "image-with-text-0": {
-          "type": "heading",
+        "feature_bFNgAX": {
+          "type": "feature",
           "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
+            "icon": "stethoscope",
+            "icon_box_color": "#fffb5c",
+            "title": "Doctor-Formulated",
+            "text": "<p>Created by identical twin doctors who understand teen skin inside out.</p>"
           }
         },
-        "image-with-text-1": {
-          "type": "text",
+        "feature_67MDpB": {
+          "type": "feature",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "text_style": "body"
+            "icon": "vegan",
+            "icon_box_color": "#fffb5c",
+            "title": "Vegan & Cruelty-Free",
+            "text": "<p>Kind to your skin, your body, and the planet.</p>"
+          }
+        },
+        "feature_hBmFUj": {
+          "type": "feature",
+          "settings": {
+            "icon": "blend",
+            "icon_box_color": "#fffb5c",
+            "title": "Gentle but Effective",
+            "text": "<p>Powerful ingredients that calm breakouts without harshness.</p>"
+          }
+        },
+        "feature_ccKxHL": {
+          "type": "feature",
+          "settings": {
+            "icon": "smile",
+            "icon_box_color": "#fffb5c",
+            "title": "Confidence-Focused",
+            "text": "<p>More than skin deep — skincare that helps you feel good in your own skin.</p>"
           }
         }
       },
       "block_order": [
-        "image-with-text-0",
-        "image-with-text-1"
+        "feature_bFNgAX",
+        "feature_67MDpB",
+        "feature_hBmFUj",
+        "feature_ccKxHL"
       ],
+      "name": "Features Section",
       "settings": {
-        "height": "small",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "",
-        "color_scheme": "scheme-2",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "tagline": "",
+        "show_pattern": false,
+        "heading": "",
+        "subheading": "",
+        "layout": "grid",
+        "columns": 4,
+        "icon_size": 28,
+        "image_position": "left",
+        "color_scheme": "scheme-3"
       }
     },
-    "multicolumn": {
-      "type": "multicolumn",
+    "features_section_4LgrPB": {
+      "type": "features-section",
       "blocks": {
-        "column-0": {
-          "type": "column",
+        "feature_PhQrnf": {
+          "type": "feature",
           "settings": {
-            "title": "Free Shipping",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
+            "icon": "waves",
+            "icon_box_color": "#ffc882",
+            "title": "Calms breakouts withoutstripping your skin",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
           }
         },
-        "column-1": {
-          "type": "column",
+        "feature_36b4Un": {
+          "type": "feature",
           "settings": {
-            "title": "Hassle-Free Exchanges",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
+            "icon": "circle-arrow-down",
+            "icon_box_color": "#ffc882",
+            "title": "Reduces redness and irritation",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+          }
+        },
+        "feature_Cme9FT": {
+          "type": "feature",
+          "settings": {
+            "icon": "droplet",
+            "icon_box_color": "#ffc882",
+            "title": "Lightweight, non-greasy texture",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+          }
+        },
+        "feature_zgPPpf": {
+          "type": "feature",
+          "settings": {
+            "icon": "file-badge",
+            "icon_box_color": "#ffc882",
+            "title": "Designed by dermatology experts for teen skin",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
           }
         }
       },
       "block_order": [
-        "column-0",
-        "column-1"
+        "feature_PhQrnf",
+        "feature_36b4Un",
+        "feature_Cme9FT",
+        "feature_zgPPpf"
       ],
+      "name": "Features Section",
       "settings": {
-        "title": "",
+        "tagline": "Key benefits",
+        "show_pattern": true,
+        "heading": "Why you’ll love it",
+        "subheading": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui</p>",
+        "layout": "image",
+        "columns": 4,
+        "icon_size": 28,
+        "image": "shopify://shop_images/DTS_BEHIND_THE_SCENES_Shauna_Summers_Photos_ID8231.jpg",
+        "image_position": "right",
+        "color_scheme": "scheme-4"
+      }
+    },
+    "multicolumn_RJz6DG": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_mJeBMF": {
+          "type": "column",
+          "settings": {
+            "tagline": "Step 1",
+            "heading_size": "h0",
+            "title": "Apply",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+            "link_label": "",
+            "link": "",
+            "card_background": "#fffb5c"
+          }
+        },
+        "column_zbBBe8": {
+          "type": "column",
+          "settings": {
+            "tagline": "Step 2",
+            "heading_size": "h0",
+            "title": "Massage",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+            "link_label": "",
+            "link": "",
+            "card_background": "#abff88"
+          }
+        },
+        "column_yDKkrp": {
+          "type": "column",
+          "settings": {
+            "tagline": "Step 3",
+            "heading_size": "h0",
+            "title": "Rinse",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+            "link_label": "",
+            "link": "",
+            "card_background": "#a9ffff"
+          }
+        }
+      },
+      "block_order": [
+        "column_mJeBMF",
+        "column_zbBBe8",
+        "column_yDKkrp"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "Simple, stress-free steps — because skincare shouldn’t be complicated.",
+        "tagline": "How to use",
+        "subheading": "",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
         "button_label": "",
         "button_link": "",
-        "columns_desktop": 2,
+        "columns_desktop": 3,
         "column_alignment": "left",
-        "background_style": "none",
-        "color_scheme": "scheme-1",
+        "background_style": "primary",
+        "color_scheme": "",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
+    },
+    "featured_bundle_mQMr6F": {
+      "type": "featured-bundle",
+      "name": "Featured bundle",
+      "settings": {
+        "desktop_image": "shopify://shop_images/bundle-1.webp",
+        "product": "4-step-routine",
+        "product_handle": "",
+        "discount_label": "",
+        "heading": "Save with our 4 step routine, for best results",
+        "subheading": "<p>Follow with one or two sentences that expand on your value proposition.</p>",
+        "add_to_cart_label": "Add to cart",
+        "secondary_button_label": "View the routine",
+        "secondary_button_link": "",
+        "color_scheme": ""
+      }
+    },
+    "testimonials_q9Mmxa": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_NHTHTM": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "<p>“As dermatology doctors — and parents — we wanted something that calms skin without harshness. This product is exactly what we’d trust for our own kids, and now for yours too.”</p>",
+            "author_name": "Kathryn Hogg",
+            "author_role": "Founder",
+            "author_image": "shopify://shop_images/kathryn_hogg.png"
+          }
+        },
+        "testimonial_4FVHUD": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "<p>“As dermatology doctors — and parents — we wanted something that calms skin without harshness. This product is exactly what we’d trust for our own kids, and now for yours too.”</p>",
+            "author_name": "Helen Eckley",
+            "author_role": "Founder",
+            "author_image": "shopify://shop_images/helen_eckley.png"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_NHTHTM",
+        "testimonial_4FVHUD"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "title": "Why we made this",
+        "tagline": "From the founders",
+        "subheading": "",
+        "heading_size": "h0",
+        "background_style": "primary",
+        "color_scheme": "scheme-2",
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
+    },
+    "collapsible_content_PEbjh9": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_FjpeQH": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+            "icon": "none",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_xfVURp": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+            "icon": "none",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_tYVdD9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+            "icon": "none",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_CBgBKW": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+            "icon": "none",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_yWexMb": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+            "icon": "none",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_UxqFFD": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+            "icon": "none",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_rG9UUU": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+            "icon": "none",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_FjpeQH",
+        "collapsible_row_xfVURp",
+        "collapsible_row_tYVdD9",
+        "collapsible_row_CBgBKW",
+        "collapsible_row_yWexMb",
+        "collapsible_row_UxqFFD",
+        "collapsible_row_rG9UUU"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "We've compiled the most important information to help you get the most out of your experience",
+        "heading": "Frequently asked questions",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 96,
+        "padding_bottom": 96
       }
     },
     "related-products": {
@@ -215,24 +465,28 @@
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
+        "products_to_show": 2,
+        "columns_desktop": 2,
         "columns_mobile": "2",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-5",
         "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "padding_top": 36,
-        "padding_bottom": 28
+        "padding_top": 96,
+        "padding_bottom": 96
       }
     }
   },
   "order": [
     "main",
-    "image-with-text",
-    "multicolumn",
+    "features_section_knWMbW",
+    "features_section_4LgrPB",
+    "multicolumn_RJz6DG",
+    "featured_bundle_mQMr6F",
+    "testimonials_q9Mmxa",
+    "collapsible_content_PEbjh9",
     "related-products"
   ]
 }
