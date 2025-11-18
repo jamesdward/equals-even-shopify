@@ -305,158 +305,108 @@
         "color_scheme": "scheme-4"
       }
     },
-    "image_with_text_atV8Uc": {
-      "type": "image-with-text",
+    "image_with_title_JztF4w": {
+      "type": "image-with-title",
       "blocks": {
-        "heading_H938B3": {
-          "type": "heading",
-          "settings": {
-            "heading": "Two doctors. One mission.",
-            "heading_size": "h1"
-          }
-        },
-        "text_YACb6C": {
+        "text_CJEfki": {
           "type": "text",
           "settings": {
             "text": "<p>We’re identical twin doctors with over X years of experience in dermatology — from long careers in the NHS to running our own private skin clinics. But when our own kids became teenagers, we were shocked by how hard it was to find products we’d actually trust on their skin. Even as experts, the shelves felt overwhelming. So we set out to create what we couldn’t find: skincare that’s safe, simple, and genuinely effective for teen skin.</p>",
             "text_style": "body"
           }
         },
-        "button_8wDwPc": {
+        "button_Ym786N": {
           "type": "button",
           "settings": {
-            "button_label": "Button label",
+            "button_label": "Shop now",
             "button_link": "",
             "button_style_secondary": false
           }
         }
       },
       "block_order": [
-        "heading_H938B3",
-        "text_YACb6C",
-        "button_8wDwPc"
+        "text_CJEfki",
+        "button_Ym786N"
       ],
-      "name": "t:sections.image-with-text.presets.name",
+      "name": "Image with title",
       "settings": {
+        "show_pattern": true,
         "image": "shopify://shop_images/twins-glitter.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
         "image_behavior": "none",
+        "tagline": "Meet the Twins",
+        "heading": "Two doctors. One mission.",
+        "subheading": "",
+        "title_size": "h1",
         "content_layout": "no-overlap",
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "left",
         "section_color_scheme": "",
         "color_scheme": "",
-        "padding_top": 96,
-        "padding_bottom": 96
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
-    "collage": {
-      "type": "collage",
+    "featured_blog_yFVcxe": {
+      "type": "featured-blog",
+      "name": "t:sections.featured-blog.presets.name",
+      "settings": {
+        "blog": "news",
+        "button_label": "Explore Skin School",
+        "button_link": "shopify://blogs/news",
+        "button_style_secondary": true,
+        "tagline": "Skin School",
+        "subheading": "<p>Skincare isn’t just about products. In our Wellness hub, we share simple science-backed advice to help you understand your skin, manage stress, and build real confidence.</p>",
+        "show_pattern": true,
+        "post_limit": 4,
+        "heading": "Tips, truths & tools for calmer skin",
+        "heading_size": "h1",
+        "layout": "title_left",
+        "columns_desktop": 2,
+        "show_view_all": true,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "newsletter_iTqLM9": {
+      "type": "newsletter",
       "blocks": {
-        "collection-0": {
-          "type": "collection",
+        "heading_giLWb4": {
+          "type": "heading",
           "settings": {
-            "collection": ""
+            "heading": "Be the first to know, feel and glow  ",
+            "heading_size": "h1"
           }
         },
-        "product": {
-          "type": "product",
+        "paragraph_cw6JJz": {
+          "type": "paragraph",
           "settings": {
-            "product": "",
-            "second_image": false
+            "text": "<p>Get skin tips, myth-busting advice, and exclusive updates from the twins straight to your inbox. No spam, just calm.</p>"
           }
         },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
+        "email_form_UkUNq8": {
+          "type": "email_form",
+          "settings": {}
         }
       },
       "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
+        "heading_giLWb4",
+        "paragraph_cw6JJz",
+        "email_form_UkUNq8"
       ],
+      "name": "t:sections.newsletter.presets.name",
       "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "card_styles": "product-card-wrapper",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "enable_video_looping": false,
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column1": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column2": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column3": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column1",
-        "column2",
-        "column3"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     }
   },
@@ -468,9 +418,8 @@
     "featured_collection",
     "featured_bundle_GAmQri",
     "features_section_Kggtzn",
-    "image_with_text_atV8Uc",
-    "collage",
-    "video",
-    "multicolumn"
+    "image_with_title_JztF4w",
+    "featured_blog_yFVcxe",
+    "newsletter_iTqLM9"
   ]
 }

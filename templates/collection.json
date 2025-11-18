@@ -1,10 +1,19 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "settings": {
         "show_collection_description": true,
-        "show_collection_image": false,
+        "show_collection_image": true,
         "color_scheme": "scheme-1"
       }
     },
@@ -12,21 +21,77 @@
       "type": "main-collection-product-grid",
       "settings": {
         "products_per_page": 16,
-        "columns_desktop": 4,
+        "columns_desktop": 2,
+        "columns_mobile": "2",
+        "color_scheme": "",
         "image_ratio": "adapt",
+        "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
+        "quick_add": "none",
         "enable_filtering": true,
+        "filter_type": "horizontal",
         "enable_sorting": true,
-        "columns_mobile": "2",
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 96
+      }
+    },
+    "featured_bundle_8xrEfB": {
+      "type": "featured-bundle",
+      "name": "Featured bundle",
+      "settings": {
+        "desktop_image": "shopify://shop_images/bundle-1.webp",
+        "product": "4-step-routine",
+        "product_handle": "",
+        "discount_label": "",
+        "heading": "Save with our 4 step routine, for best results",
+        "subheading": "<p>Follow with one or two sentences that expand on your value proposition.</p>",
+        "add_to_cart_label": "Add to cart",
+        "secondary_button_label": "View the routine",
+        "secondary_button_link": "",
+        "color_scheme": ""
+      }
+    },
+    "newsletter_mQpnf4": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_p7w6wi": {
+          "type": "heading",
+          "settings": {
+            "heading": "Be the first to know, feel and glow  ",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_mwgM7L": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Get skin tips, myth-busting advice, and exclusive updates from the twins straight to your inbox. No spam, just calm.</p>"
+          }
+        },
+        "email_form_p4zBtb": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_p7w6wi",
+        "paragraph_mwgM7L",
+        "email_form_p4zBtb"
+      ],
+      "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     }
   },
   "order": [
     "banner",
-    "product-grid"
+    "product-grid",
+    "featured_bundle_8xrEfB",
+    "newsletter_mQpnf4"
   ]
 }
