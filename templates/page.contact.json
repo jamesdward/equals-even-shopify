@@ -1,7 +1,17 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 36,
         "padding_bottom": 36
@@ -10,9 +20,12 @@
     "form": {
       "type": "contact-form",
       "settings": {
-        "heading": "",
-        "heading_size": "h1",
+        "heading": "Get in touch",
+        "subheading": "<p>Write one or two welcoming sentences that encourage contact. Include your response time commitment and highlight your team's readiness to help.</p>",
+        "heading_size": "h0",
         "color_scheme": "scheme-1",
+        "side_image": "shopify://shop_images/image_85.webp",
+        "side_image_alt": "",
         "padding_top": 36,
         "padding_bottom": 36
       }

@@ -1,50 +1,53 @@
 {{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  .contact--with-image {
-    display: grid;
-    gap: 2rem;
-  }
-
-  .contact__left,
-  .contact__right {
-    min-width: 0;
-  }
-
-  .contact__image {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: var(--media-radius);
-  }
-
-  @media screen and (min-width: 990px) {
-    .contact--with-image {
-      grid-template-columns: 3fr 2fr; /* 60% / 40% */
-      align-items: start;
-    }
-  }
-
-  @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+
+      min-height: 800px;
     }
-  }
+
+    .contact--with-image {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .contact__left,
+    .contact__right {
+      min-width: 0;
+    }
+
+    .contact__left {
+      padding: 4rem;
+      margin-left: auto;
+    }
+    .contact__right {
+  height: 100%;
+    }
+
+    .contact__image {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      border-radius: var(--media-radius);
+    }
+
+    @media screen and (min-width: 990px) {
+      .contact--with-image {
+        grid-template-columns: 1fr 1fr; /* 60% / 40% */
+        align-items: start;
+      }
+    }
 {%- endstyle -%}
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
-  <div class="contact page-width section-{{ section.id }}-padding{% if section.settings.side_image != blank %} contact--with-image{% endif %}">
+  <div class="contact section-{{ section.id }}-padding{% if section.settings.side_image != blank %} contact--with-image{% endif %}">
     <div class="contact__left">
       {%- if section.settings.heading != blank -%}
         {%
           render 'section-title',
           heading: section.settings.heading,
+          subheading: section.settings.subheading,
           heading_tag: 'h2',
           heading_class: 'title title-wrapper--no-top-margin inline-richtext ' | append: section.settings.heading_size
         %}
@@ -192,6 +195,11 @@
       "id": "heading",
       "default": "t:sections.contact-form.settings.title.default",
       "label": "t:sections.contact-form.settings.title.label"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading"
     },
     {
       "type": "select",

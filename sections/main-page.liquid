@@ -6,6 +6,46 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
+  .page-hero {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-hero__bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translateZ(0);
+    height: 100%;
+    width: 100%;
+    display: block !important;
+  }
+
+  .page-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.0) 100%);
+    display: block !important;
+  }
+
+  .page-hero__content {
+    position: relative;
+    padding-top: 16rem;
+    padding-bottom: 16rem;
+    color: #fff;
+  }
+
+  .page-hero__title {
+    margin: 0 0 1.2rem 0;
+    color: #fff;
+  }
+
+  .page-hero__desc {
+    max-width: 70ch;
+  }
+
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
@@ -14,10 +54,141 @@
   }
 {%- endstyle -%}
 
+{%- liquid
+  assign mf_image = page.metafields.custom.page_featured_image
+  if mf_image == blank
+    assign mf_image = page.metafields.global.page_featured_image
+  endif
+  assign mf_desc = page.metafields.custom.page_description
+  if mf_desc == blank
+    assign mf_desc = page.metafields.global.page_description
+  endif
+  assign has_hero = false
+  if mf_image != blank or mf_desc != blank
+    assign has_hero = true
+  endif
+  assign hero_image_url = ''
+  if mf_image != blank
+    assign hero_image_url = ''
+    if mf_image.value != blank
+      assign hero_image_url = mf_image.value
+    endif
+    if hero_image_url == blank
+      assign hero_image_url = mf_image | file_url
+    endif
+    assign hero_prefix = hero_image_url | slice: 0, 2
+    if hero_prefix == '//'
+      assign hero_image_url = hero_image_url | prepend: 'https:'
+    endif
+    assign first_char = hero_image_url | slice: 0, 1
+    if hero_prefix != '//' and hero_image_url != blank and first_char == '/'
+      assign hero_image_url = 'https://' | append: shop.permanent_domain | append: hero_image_url
+    endif
+    assign starts_http = hero_image_url | slice: 0, 7
+    assign starts_https = hero_image_url | slice: 0, 8
+    if hero_image_url != blank and hero_prefix != '//' and first_char != '/' and starts_http != 'http://' and starts_https != 'https://'
+      assign hero_image_url = 'https://' | append: shop.permanent_domain | append: '/' | append: hero_image_url
+    endif
+  endif
+-%}
+
+{% if request.design_mode %}
+  <!--
+    DEBUG main-page.liquid: page={{ page.handle | default: 'unset' }} title={{ page.title | default: '' | escape }} | mf_image(custom)= {{ page.metafields.custom.page_featured_image | json }} | mf_image(global)= {{ page.metafields.global.page_featured_image | json }} | mf_desc(custom)= {{ page.metafields.custom.page_description | json }} | mf_desc(global)= {{ page.metafields.global.page_description | json }} | resolved_has_hero={{ has_hero }}
+  -->
+  <script>
+    (function() {
+      try {
+        console.info('[Main Page Hero Debug]', {
+          page: {
+            id: {{ page.id | json }},
+            handle: {{ page.handle | json }},
+            title: {{ page.title | json }}
+          },
+          namespaces: {
+            custom: {
+              page_featured_image: {{ page.metafields.custom.page_featured_image | json }},
+              page_description: {{ page.metafields.custom.page_description | json }}
+            },
+            global: {
+              page_featured_image: {{ page.metafields.global.page_featured_image | json }},
+              page_description: {{ page.metafields.global.page_description | json }}
+            }
+          },
+          resolved: {
+            mf_image: {{ mf_image | json }},
+            mf_image_value: {% if mf_image != blank %}{{ mf_image.value | json }}{% else %}null{% endif %},
+            mf_desc: {{ mf_desc | json }},
+            has_hero: {{ has_hero | json }}
+          }
+        });
+      } catch (e) {}
+    })();
+  </script>
+{% endif %}
+
+<script>
+  (function() {
+    try {
+      var q = window.location.search;
+      var enabled = /(?:[?&])(debug|hero|debughero)(?:=|&|$)/i.test(q);
+      if (!enabled) return;
+      console.info('[Main Page Hero Debug - query]', {
+        page: {
+          id: {{ page.id | json }},
+          handle: {{ page.handle | json }},
+          title: {{ page.title | json }}
+        },
+        namespaces: {
+          custom: {
+            page_featured_image: {{ page.metafields.custom.page_featured_image | json }},
+            page_description: {{ page.metafields.custom.page_description | json }}
+          },
+          global: {
+            page_featured_image: {{ page.metafields.global.page_featured_image | json }},
+            page_description: {{ page.metafields.global.page_description | json }}
+          }
+        },
+        resolved: {
+          mf_image: {{ mf_image | json }},
+          mf_image_value: {% if mf_image != blank %}{{ mf_image.value | json }}{% else %}null{% endif %},
+          mf_desc: {{ mf_desc | json }},
+          has_hero: {{ has_hero | json }},
+          hero_image_url: {{ hero_image_url | json }}
+        }
+      });
+    } catch (e) {}
+  })();
+</script>
+
+{% if has_hero %}
+  <div class="page-hero">
+    {%- if hero_image_url != blank -%}
+      <div
+        class="page-hero__bg"
+        style="background-image: url('{{ mf_image | image_url: width: 2400 }}');"
+      ></div>
+      <div class="page-hero__overlay"></div>
+    {%- endif -%}
+    <div class="page-hero__content page-width page-width-desktop">
+      <h1 class="page-hero__title h0">
+        {{ page.title | escape }}
+      </h1>
+      {%- if mf_desc != blank -%}
+        <div class="page-hero__desc rte">
+          {{ mf_desc | metafield_tag }}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+{% endif %}
+
 <div class="page-width page-width--narrow section-{{ section.id }}-padding">
-  <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    {{ page.title | escape }}
-  </h1>
+  {% unless has_hero %}
+    <h1 class="main-page-title page-title h0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+      {{ page.title | escape }}
+    </h1>
+  {% endunless %}
   <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
     {{ page.content }}
   </div>
