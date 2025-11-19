@@ -1,0 +1,269 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "image_with_title_jK4RUb": {
+      "type": "image-with-title",
+      "blocks": {
+        "text_axXf4D": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We’re Helen & Kathryn,  identical twin doctors with X years of combined experience in dermatology — from long careers in the NHS to running our own private skin clinics.<br/><br/>When our own children became teenagers, we searched for products we’d feel safe putting on their skin. We were shocked at how confusing and overwhelming the options were. Even as experts, it was hard to know what to trust. So we decided to create what we couldn’t find — skincare that’s simple, effective, and genuinely designed for teen skin.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_EBDeLj": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop now",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "text_axXf4D",
+        "button_EBDeLj"
+      ],
+      "name": "Image with title",
+      "settings": {
+        "show_pattern": true,
+        "image": "shopify://shop_images/twins-glitter.webp",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "tagline": "Story",
+        "heading": "From the NHS to your skincare shelf",
+        "subheading": "",
+        "title_size": "h1",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_title_yn7diw": {
+      "type": "image-with-title",
+      "blocks": {
+        "text_UdqkaW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We believe skincare should do more than treat spots. It should make you feel confident, supported, and at ease in your own skin.<br/><br/>Equals Even is built on one mission: to take the stress out of skincare and replace it with calm. Calm formulas. Calm routines. Calm skin — and with it, a calmer mind.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_Ntjqji": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Shop now",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "text_UdqkaW",
+        "button_Ntjqji"
+      ],
+      "name": "Image with title",
+      "settings": {
+        "show_pattern": false,
+        "image": "shopify://shop_images/DTS_Young_Latin_Martin_Pisotti_Photos_ID6994.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "tagline": "The mission",
+        "heading": "Calm skin = Calm mind",
+        "subheading": "",
+        "title_size": "h1",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-4",
+        "color_scheme": "scheme-4",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "features_section_9ypyxm": {
+      "type": "features-section",
+      "blocks": {
+        "feature_YgKK3b": {
+          "type": "feature",
+          "settings": {
+            "icon": "File-Badge",
+            "icon_box_color": "#a9ffff",
+            "title": "Real medical expertise",
+            "text": "<p>We understand skin biology and how hormones affect young skin.</p>"
+          }
+        },
+        "feature_UhcqYy": {
+          "type": "feature",
+          "settings": {
+            "icon": "stethoscope",
+            "icon_box_color": "#a9ffff",
+            "title": "Clinical experience",
+            "text": "<p>We've seen thousands of patients and know what actually works.</p>"
+          }
+        },
+        "feature_C4g3nf": {
+          "type": "feature",
+          "settings": {
+            "icon": "Microscope",
+            "icon_box_color": "#a9ffff",
+            "title": "Evidence-based formulations",
+            "text": "<p>Every ingredient is chosen for its proven effectiveness and gentleness.</p>"
+          }
+        },
+        "feature_XPNqYq": {
+          "type": "feature",
+          "settings": {
+            "icon": "book-plus",
+            "icon_box_color": "#a9ffff",
+            "title": "Ongoing research",
+            "text": "<p>Current with the latest dermatological research and ingredient science.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_YgKK3b",
+        "feature_UhcqYy",
+        "feature_C4g3nf",
+        "feature_XPNqYq"
+      ],
+      "name": "Features Section",
+      "settings": {
+        "tagline": "The Medical Difference",
+        "show_pattern": false,
+        "heading": "Doctors first, skincare founders second.",
+        "subheading": "<p>Teen skin needs different care than adult skin.  Your skin is still developing, producing more oil, and dealing with hormonal changes. Our formulations respect this - powerful enough to tackle concerns, gentle enough for daily use.</p>",
+        "layout": "grid",
+        "columns": 4,
+        "icon_size": 28,
+        "image_position": "left",
+        "color_scheme": ""
+      }
+    },
+    "collapsible_content_Nyjncb": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_hfiqd7": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+            "icon": "none",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_bAMLd9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+            "icon": "none",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_CqXBNy": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+            "icon": "none",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_dCHGen": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+            "icon": "none",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_CxRGYj": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+            "icon": "none",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_VGtzVR": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+            "icon": "none",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_qF8zpL": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+            "icon": "none",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_hfiqd7",
+        "collapsible_row_bAMLd9",
+        "collapsible_row_CqXBNy",
+        "collapsible_row_dCHGen",
+        "collapsible_row_CxRGYj",
+        "collapsible_row_VGtzVR",
+        "collapsible_row_qF8zpL"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
+      "settings": {
+        "caption": "We've compiled the most important information to help you get the most out of your experience",
+        "heading": "Frequently asked questions",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_title_jK4RUb",
+    "image_with_title_yn7diw",
+    "features_section_9ypyxm",
+    "collapsible_content_Nyjncb"
+  ]
+}
