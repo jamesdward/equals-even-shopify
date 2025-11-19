@@ -7,6 +7,25 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
+  .multicolumn-card__video-wrapper {
+    width: 100%;
+  }
+
+  .multicolumn-card__video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: var(--media-radius);
+    background: #000;
+  }
+
+  .multicolumn-card__video iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
@@ -65,6 +84,7 @@
         {%- for block in section.blocks -%}
           {%- assign empty_column = '' -%}
           {%- if block.settings.image == blank
+            and block.settings.video_url == blank
             and block.settings.title == blank
             and block.settings.text == blank
             and block.settings.link_label == blank
@@ -82,7 +102,30 @@
             {% endif %}
           >
             <div class="multicolumn-card content-container">
-              {%- if block.settings.image != blank -%}
+              {%- if block.settings.video_url != blank -%}
+                {%- liquid
+                  assign video_url = block.settings.video_url
+                  assign yt_id = ''
+                  if video_url contains 'youtu.be/'
+                    assign yt_id = video_url | split: 'youtu.be/' | last | split: '?' | first
+                  elsif video_url contains 'youtube.com/watch'
+                    assign yt_id = video_url | split: 'v=' | last | split: '&' | first
+                  elsif video_url contains 'youtube.com/embed/'
+                    assign yt_id = video_url | split: 'embed/' | last | split: '?' | first
+                  endif
+                -%}
+                <div class="multicolumn-card__video-wrapper{% if section.settings.image_width != 'full' %} multicolumn-card-spacing{% endif %}">
+                  <div class="multicolumn-card__video">
+                    <iframe
+                      src="https://www.youtube.com/embed/{{ yt_id }}?rel=0&modestbranding=1&playsinline=1"
+                      title="YouTube video"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+              {%- elsif block.settings.image != blank -%}
                 {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
                   {% assign spaced_image = true %}
                 {% endif %}
@@ -434,6 +477,12 @@
           "type": "text",
           "id": "tagline",
           "label": "Tagline"
+        },
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "YouTube URL",
+          "info": "Supports youtube.com/watch, youtu.be and youtube.com/embed URLs"
         },
         {
           "type": "select",
