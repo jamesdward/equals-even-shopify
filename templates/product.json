@@ -14,6 +14,7 @@
       "blocks": {
         "vendor": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "{{ product.vendor }}",
             "text_style": "uppercase"
@@ -59,43 +60,37 @@
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Materials",
-            "icon": "leather",
-            "content": "",
+            "heading": "Benefits",
+            "icon": "none",
+            "content": "<p>{{ product.metafields.custom.benefits | metafield_tag }}</p>",
             "page": ""
           }
         },
         "collapsible-row-1": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Shipping & Returns",
-            "icon": "truck",
-            "content": "",
+            "heading": "How to use",
+            "icon": "none",
+            "content": "<p>{{ product.metafields.custom.how_to_use | metafield_tag }}</p>",
             "page": ""
           }
         },
         "collapsible-row-2": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Dimensions",
-            "icon": "ruler",
-            "content": "",
+            "heading": "Active ingredients",
+            "icon": "none",
+            "content": "{{ product.metafields.custom.active_ingredients | metafield_tag }}",
             "page": ""
           }
         },
         "collapsible-row-3": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Care Instructions",
-            "icon": "heart",
-            "content": "",
+            "heading": "Ingredients",
+            "icon": "none",
+            "content": "<p>{{ product.metafields.custom.ingredients | metafield_tag }}</p>",
             "page": ""
-          }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
           }
         }
       },
@@ -111,8 +106,7 @@
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
-        "collapsible-row-3",
-        "share"
+        "collapsible-row-3"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -127,7 +121,7 @@
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,
-        "padding_bottom": 12
+        "padding_bottom": 96
       }
     },
     "features_section_knWMbW": {
@@ -246,7 +240,7 @@
         "icon_size": 28,
         "image": "shopify://shop_images/DTS_BEHIND_THE_SCENES_Shauna_Summers_Photos_ID8231.jpg",
         "image_position": "right",
-        "color_scheme": "scheme-4"
+        "color_scheme": "scheme-761d946e-5164-42f7-bfcd-9bdd5cd5386b"
       }
     },
     "multicolumn_RJz6DG": {
@@ -256,6 +250,7 @@
           "type": "column",
           "settings": {
             "tagline": "Step 1",
+            "video_url": "",
             "heading_size": "h0",
             "title": "Apply",
             "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
@@ -268,6 +263,7 @@
           "type": "column",
           "settings": {
             "tagline": "Step 2",
+            "video_url": "",
             "heading_size": "h0",
             "title": "Massage",
             "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
@@ -280,6 +276,7 @@
           "type": "column",
           "settings": {
             "tagline": "Step 3",
+            "video_url": "",
             "heading_size": "h0",
             "title": "Rinse",
             "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
@@ -318,7 +315,7 @@
       "type": "featured-bundle",
       "name": "Featured bundle",
       "settings": {
-        "desktop_image": "shopify://shop_images/bundle-1.webp",
+        "desktop_image": "shopify://shop_images/image_31.webp",
         "product": "4-step-routine",
         "product_handle": "",
         "discount_label": "",
@@ -327,7 +324,7 @@
         "add_to_cart_label": "Add to cart",
         "secondary_button_label": "View the routine",
         "secondary_button_link": "",
-        "color_scheme": ""
+        "color_scheme": "scheme-4"
       }
     },
     "testimonials_q9Mmxa": {
@@ -468,7 +465,7 @@
         "products_to_show": 2,
         "columns_desktop": 2,
         "columns_mobile": "2",
-        "color_scheme": "scheme-5",
+        "color_scheme": "scheme-1",
         "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": true,

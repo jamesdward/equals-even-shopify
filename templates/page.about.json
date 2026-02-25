@@ -41,7 +41,7 @@
       ],
       "name": "Image with title",
       "settings": {
-        "show_pattern": true,
+        "show_pattern": false,
         "image": "shopify://shop_images/twins-glitter.webp",
         "height": "adapt",
         "desktop_image_width": "medium",
@@ -57,8 +57,8 @@
         "mobile_content_alignment": "left",
         "section_color_scheme": "",
         "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 96,
+        "padding_bottom": 96
       }
     },
     "image_with_title_yn7diw": {
@@ -101,8 +101,8 @@
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "left",
-        "section_color_scheme": "scheme-4",
-        "color_scheme": "scheme-4",
+        "section_color_scheme": "scheme-761d946e-5164-42f7-bfcd-9bdd5cd5386b",
+        "color_scheme": "scheme-761d946e-5164-42f7-bfcd-9bdd5cd5386b",
         "padding_top": 96,
         "padding_bottom": 96
       }
@@ -257,6 +257,40 @@
         "padding_top": 96,
         "padding_bottom": 96
       }
+    },
+    "newsletter_wyp8UY": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_CmTkrr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Be the first to know, feel and glow  ",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_gVC7iq": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Get skin tips, myth-busting advice, and exclusive updates from the twins straight to your inbox. No spam, just calm.</p>"
+          }
+        },
+        "email_form_xJXFda": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_CmTkrr",
+        "paragraph_gVC7iq",
+        "email_form_xJXFda"
+      ],
+      "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -264,6 +298,7 @@
     "image_with_title_jK4RUb",
     "image_with_title_yn7diw",
     "features_section_9ypyxm",
-    "collapsible_content_Nyjncb"
+    "collapsible_content_Nyjncb",
+    "newsletter_wyp8UY"
   ]
 }

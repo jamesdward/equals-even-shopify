@@ -26,7 +26,7 @@
         "button_style_secondary": false,
         "tagline": "Featured articles",
         "subheading": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui</p>",
-        "show_pattern": true,
+        "show_pattern": false,
         "post_limit": 3,
         "heading": "Start here",
         "heading_size": "h1",
@@ -108,11 +108,46 @@
         "padding_top": 96,
         "padding_bottom": 96
       }
+    },
+    "newsletter_UXmDPq": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_N4gXdC": {
+          "type": "heading",
+          "settings": {
+            "heading": "Be the first to know, feel and glow  ",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_8BLPgH": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Get skin tips, myth-busting advice, and exclusive updates from the twins straight to your inbox. No spam, just calm.</p>"
+          }
+        },
+        "email_form_ahCLV3": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_N4gXdC",
+        "paragraph_8BLPgH",
+        "email_form_ahCLV3"
+      ],
+      "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "main",
     "featured_blog_33aFLX",
-    "multicolumn_ybaPHM"
+    "multicolumn_ybaPHM",
+    "newsletter_UXmDPq"
   ]
 }
